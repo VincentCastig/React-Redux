@@ -5,10 +5,18 @@ import { fetchWeather } from '../actions';
 
 class WeatherList extends Component {
   renderWeather(cityData) {
-    const name = cityData.city.name
+    const name = cityData.city.name;
+    const temps = cityData.list.map(weather => weather.main.temp);
+    console.log(temps)
     return (
       <tr key={name}>
         <td>{name}</td>
+        <td>
+            {temps[0]}
+            {temps[1]}
+            {temps[2]}
+            {temps[3]}
+        </td>
       </tr>
     )
   }
